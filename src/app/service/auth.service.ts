@@ -9,6 +9,7 @@ import { UsuarioLogin } from '../model/UsuarioLogin';
   providedIn: 'root'
 })
 export class AuthService {
+  
 
   constructor(
     private http: HttpClient
@@ -22,6 +23,9 @@ export class AuthService {
   cadastrar(usuario: Usuario): Observable<Usuario>{
     return this.http.post<Usuario>('https://nuvemdagabs.herokuapp.com/usuarios/cadastrar', usuario)
 
+  }
+  getByIdUsuario(id: number): Observable<Usuario>{
+    return this.http.get<Usuario>(`https://nuvemdagabs.herokuapp.com/usuarios/${id}`)
   }
   logado(){
     let ok: boolean = false

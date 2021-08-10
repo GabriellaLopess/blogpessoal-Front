@@ -16,7 +16,7 @@ export class PostagemService {
   }
 
   getAllPostagens(): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>('https://nuvemdagabs.herokuapp.com/postagens/listar',
+    return this.http.get<Postagem[]>('https://nuvemdagabs.herokuapp.com/postagens',
     this.token)
   }
 
